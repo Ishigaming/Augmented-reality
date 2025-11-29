@@ -1,0 +1,128 @@
+// Variables de color (tomadas del registro)
+$primary-fire: #FF5722;    // Naranja intenso para 'Iniciar Sesión'
+$secondary-fire: #FF9800;  // Ámbar/Amarillo para 'Registrarse' y acentos
+$dark-background: #121212; // Fondo oscuro principal
+$light-text: #E0E0E0;      // Texto claro para el formulario
+$input-bg: rgba(60, 60, 60, 0.9); // Fondo de los inputs
+$form-bg: rgba(40, 40, 40, 0.85); // Fondo del cuadro del formulario
+
+// ===================================
+// ENCABEZADO Y CONTENEDOR BASE
+// ===================================
+
+ion-header {
+    ion-toolbar {
+        --background: $dark-background; // Header oscuro
+        color: $light-text;
+        --border-width: 0; // Sin línea debajo del header
+        
+        ion-title {
+            color: $light-text;
+            font-weight: 600;
+        }
+    }
+}
+
+ion-content {
+    // 1. Fondo de gradiente principal
+    --background: linear-gradient(135deg, $dark-background 0%, darken($dark-background, 5%) 100%);
+    height: 100%;
+    
+    // Contenedor principal para centrar el formulario
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Centra verticalmente
+    align-items: center;
+    padding: 20px; // Padding general alrededor del formulario
+    
+    // El overlay es opcional si no lo usas en el HTML
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+// ===================================
+// CUADRO DEL FORMULARIO
+// ===================================
+
+// Esta clase ion-padding ahora actúa como el "form-box"
+.ion-padding { 
+    width: 100%;
+    max-width: 350px; // Limita el ancho del formulario
+    padding: 30px 20px !important; // Padding interno del cuadro del formulario
+    border-radius: 12px;
+    background: $form-bg; // Fondo semi-transparente oscuro
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    // Añade un poco de margen para que no se pegue tanto si el viewport es muy pequeño
+    margin: auto; 
+}
+
+// ===================================
+// ENTRADAS (Items)
+// ===================================
+
+ion-item {
+    --background: $input-bg; // Fondo de los inputs
+    border-radius: 8px;
+    margin-bottom: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+    ion-input {
+        color: $light-text; // Texto de entrada claro
+        --placeholder-color: #A0A0A0; // Placeholder claro
+    }
+    
+    ion-label {
+        color: $secondary-fire; // Etiqueta flotante con color ámbar
+        font-weight: 500;
+    }
+}
+
+// ===================================
+// BOTONES
+// ===================================
+
+// Botón Principal: Iniciar Sesión (Primera ocurrencia de ion-button)
+ion-button[expand="block"]:first-of-type {
+    --background: $primary-fire; // Fondo naranja intenso
+    --background-activated: darken($primary-fire, 10%); // Color al presionar
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 30px; 
+    box-shadow: 0 4px 15px rgba($primary-fire, 0.6); // Sombra brillante
+    transition: box-shadow 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 4px 25px rgba($primary-fire, 0.8);
+    }
+}
+
+// Botón Secundario: Registrarse (color="secondary")
+ion-button[color="secondary"] {
+    --background: $secondary-fire; // Fondo ámbar
+    --background-activated: darken($secondary-fire, 10%);
+    --color: white; // Texto blanco
+    font-weight: 700;
+    font-size: 1.1rem;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 15px; // Espacio entre botones
+    box-shadow: 0 4px 15px rgba($secondary-fire, 0.6);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 4px 25px rgba($secondary-fire, 0.8);
+    }
+}

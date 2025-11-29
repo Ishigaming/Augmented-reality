@@ -1,0 +1,27 @@
+/* 1. Contenedor Fijo de la Escena AR */
+.ar-container {
+    position: fixed; /* Lo saca del flujo normal de Ionic */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% del Viewport Width */
+    height: 100vh; /* 100% del Viewport Height */
+    z-index: 10; /* Asegura que esté por encima de cualquier otro elemento de Ionic */
+    overflow: hidden;
+}
+
+/* 2. Fuerza la escena y el canvas a llenar ese contenedor */
+.ar-container a-scene,
+.ar-container .a-canvas {
+    width: 100% !important; 
+    height: 100% !important; 
+    display: block !important;
+}
+
+/* Opcional: Para asegurar que el scroll de Ionic no interfiera */
+ion-content {
+    --background: transparent;
+    &::part(scroll) {
+        height: 100%;
+        overflow: hidden;
+    }
+}

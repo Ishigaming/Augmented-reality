@@ -1,0 +1,64 @@
+<div *ngIf="isLoading" class="ar-loader">
+  <p>Inicializando realidad aumentada...</p>
+</div>
+
+<div *ngIf="loadError" class="ar-error">
+  <strong>Error:</strong> {{ loadError }}
+</div>
+
+<a-scene
+  embedded
+  arjs="trackingMethod: best; sourceType: webcam; sourceWidth:1280; sourceHeight:720; debugUIEnabled: false;"
+>
+  <ng-container *ngFor="let item of arTargets; trackBy: identifyTarget">
+
+    <a-marker
+      *ngIf="item.type === 'marker'"
+      [attr.preset]="item.markerpreset"
+      [attr.url]="item.patternurl"
+      emitevent="true"
+    >
+      <a-plane
+        [attr.src]="item.contenturl"
+        [attr.width]="calculateWidth(item)"
+        [attr.height]="calculateHeight(item)"
+        [attr.position]="item.position || '0 0 0.1'"
+        [attr.rotation]="item.rotation || '0 0 0'"
+        material="side:double; transparent:true; opacity:1"
+      ></a-plane>
+    </a-marker>
+
+    <a-nft
+      *ngIf="item.type === 'nft'"
+      type="nft"
+      [attr.url]="item.nfturlbase"
+      emitevent="true"
+      smooth="true"
+      smoothCount="15"
+      smoothTolerance="0.02"
+      smoothThreshold="10"
+    >
+      <a-plane
+        [attr.src]="item.contenturl"
+        [attr.width]="calculateWidth(item)"
+        [attr.height]="calculateHeight(item)"
+        [attr.position]="item.position || '0 0 0.1'"
+        [attr.rotation]="item.rotation || '0 0 0'"
+        material="side:double; transparent:true; opacity:1"
+      ></a-plane>
+    </a-nft>
+
+    <a-plane
+      *ngIf="item.type === 'image'"
+      [attr.src]="item.contenturl"
+      [attr.width]="calculateWidth(item)"
+      [attr.height]="calculateHeight(item)"
+      [attr.position]="item.position || '0 1 -3'"
+      [attr.rotation]="item.rotation || '0 0 0'"
+      material="side:double; transparent:true; opacity:1"
+    ></a-plane>
+
+  </ng-container>
+
+  <a-entity camera></a-entity>
+</a-scene>

@@ -1,0 +1,7 @@
+{
+  "name": "AR-images",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

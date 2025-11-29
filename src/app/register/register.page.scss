@@ -1,0 +1,169 @@
+// Variables de color sugeridas para un diseño 'Fire/Gradient'
+$primary-fire: #FF5722;   // Naranja intenso
+$secondary-fire: #FF9800; // Ámbar/Amarillo
+$dark-background: #121212; // Fondo oscuro para buen contraste
+$light-text: #E0E0E0;     // Texto claro
+
+// ===================================
+// BASE & BACKGROUND
+// ===================================
+
+ion-content.register-gradient {
+    // 1. Fondo de gradiente principal (clase register-gradient)
+    --background: linear-gradient(135deg, $dark-background 0%, darken($dark-background, 5%) 100%);
+    // Asegura que el contenido ocupe toda la altura
+    height: 100%; 
+}
+
+// 2. Overlay para añadir un toque de profundidad o brillo
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // Gradiente sutil para darle más textura que un color sólido
+    background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    pointer-events: none; // Permite hacer clic a través del overlay
+}
+
+// ===================================
+// CONTENEDOR PRINCIPAL
+// ===================================
+
+.register-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Centra verticalmente el contenido
+    align-items: center;
+    min-height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+// ===================================
+// LOGO / TÍTULO
+// ===================================
+
+.logo-area {
+    margin-bottom: 30px;
+    
+    h1 {
+        color: $light-text;
+        font-weight: 600;
+        margin-top: 15px;
+        font-size: 1.8rem;
+    }
+}
+
+.fire-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 
+        0 0 15px rgba($primary-fire, 0.8), 
+        0 0 30px rgba($secondary-fire, 0.5); 
+    
+    // Gradiente "Fire" para el fondo del círculo
+    background: linear-gradient(145deg, $primary-fire 0%, $secondary-fire 100%);
+    
+    ion-icon {
+        font-size: 2.5rem;
+        color: white;
+    }
+}
+
+// ===================================
+// FORMULARIO Y ENTRADAS
+// ===================================
+
+.form-box {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(40, 40, 40, 0.7); // Fondo semi-transparente oscuro
+    backdrop-filter: blur(5px); // Efecto blur moderno
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.input-item {
+    --background: rgba(60, 60, 60, 0.9);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+    ion-input {
+        color: $light-text;
+        --placeholder-color: #A0A0A0;
+    }
+    
+    ion-icon {
+        color: $primary-fire;
+        font-size: 1.3rem;
+        margin-inline-end: 10px;
+    }
+}
+
+// ===================================
+// BOTÓN DE REGISTRO
+// ===================================
+
+.btn-fire {
+    --background: $primary-fire;
+    --background-activated: darken($primary-fire, 10%);
+    --background-hover: $secondary-fire;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba($primary-fire, 0.6); // Sombra que simula el brillo
+    transition: box-shadow 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 4px 25px rgba($secondary-fire, 0.8);
+    }
+}
+
+// ===================================
+// MENSAJES DE ERROR
+// ===================================
+
+.error-message {
+    color: #ff6b6b; // Rojo suave para errores
+    font-size: 0.8rem;
+    margin-top: -10px; // Acercar al input
+    margin-bottom: 15px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+// ===================================
+// FOOTER
+// ===================================
+
+.footer {
+    margin-top: 30px;
+    color: $light-text;
+    
+    span {
+        margin-right: 5px;
+    }
+    
+    a {
+        color: $secondary-fire;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: $primary-fire;
+        }
+    }
+}

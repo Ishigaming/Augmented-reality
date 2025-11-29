@@ -12,9 +12,13 @@ export const environment = {
     messagingSenderId: "634032946340",
     appId: "1:634032946340:web:2bc19b5ac54bc496b6fa31",
     measurementId: "G-J854LK3RT8"
+<<<<<<< HEAD
   },
   supabaseUrl: 'https://oqmjrgusmcthgcmyfxfu.supabase.co',
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xbWpyZ3VzbWN0aGdjbXlmeGZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzNDM4ODEsImV4cCI6MjA3OTkxOTg4MX0.xQP5Y3gkuY_M0r4iWm6BGvIaFuxZNfacMcr3UXLEi9I'
+=======
+  }
+>>>>>>> 49b0e980d2afd9a0fb86a99e2ca4a537d5744aaa
 };
 
 /*

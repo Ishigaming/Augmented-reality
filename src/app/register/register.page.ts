@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { NavController, ToastController } from '@ionic/angular';
 import { AuthService } from '../../services/auth.service';
+=======
+>>>>>>> 49b0e980d2afd9a0fb86a99e2ca4a537d5744aaa
 
 @Component({
   selector: 'app-register',
@@ -10,6 +13,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: false
 })
 export class RegisterPage implements OnInit {
+<<<<<<< HEAD
   registerForm!: FormGroup;
 
   constructor(
@@ -95,4 +99,12 @@ export class RegisterPage implements OnInit {
     const isWhitespace = (control.value || '').trim().length === 0;
     return isWhitespace ? { whitespace: true } : null;
   }
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> 49b0e980d2afd9a0fb86a99e2ca4a537d5744aaa
 }

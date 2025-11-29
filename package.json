@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "AR-images",
+=======
+  "name": "augmented-reality",
+>>>>>>> 49b0e980d2afd9a0fb86a99e2ca4a537d5744aaa
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -17,7 +21,10 @@
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
+<<<<<<< HEAD
     "@angular/fire": "^20.0.1",
+=======
+>>>>>>> 49b0e980d2afd9a0fb86a99e2ca4a537d5744aaa
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/platform-browser-dynamic": "^20.0.0",
@@ -28,8 +35,11 @@
     "@capacitor/keyboard": "7.0.3",
     "@capacitor/status-bar": "7.0.3",
     "@ionic/angular": "^8.0.0",
+<<<<<<< HEAD
     "@supabase/supabase-js": "^2.86.0",
     "firebase": "^11.10.0",
+=======
+>>>>>>> 49b0e980d2afd9a0fb86a99e2ca4a537d5744aaa
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

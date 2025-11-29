@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 1. Contenedor Fijo de la Escena AR */
 .ar-container {
     position: fixed; /* Lo saca del flujo normal de Ionic */
@@ -24,4 +25,32 @@ ion-content {
         height: 100%;
         overflow: hidden;
     }
+=======
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+>>>>>>> 49b0e980d2afd9a0fb86a99e2ca4a537d5744aaa
 }

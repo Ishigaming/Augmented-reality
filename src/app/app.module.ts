@@ -6,8 +6,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+<<<<<<< HEAD
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+=======
+>>>>>>> 49b0e980d2afd9a0fb86a99e2ca4a537d5744aaa
 
 @NgModule({
   declarations: [AppComponent],
